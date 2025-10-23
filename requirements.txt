@@ -1,0 +1,10 @@
+# Core dependencies
+anthropic>=0.25.0
+slack-sdk>=3.23.0
+gitpython>=3.1.40
+requests>=2.31.0
+
+# API Server
+fastapi>=0.104.0
+uvicorn>=0.24.0
+

@@ -1,0 +1,50 @@
+# Secrets and Config
+configs/lmnh.json
+SETUP_INSTRUCTIONS.md
+
+# Process IDs
+.api.pid
+.dashboard.pid
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Next.js
+dashboard/node_modules/
+dashboard/.next/
+dashboard/out/
+dashboard/.env*.local
+
+# Logs
+logs/*.log
+*.log
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Workspace
+workspace/

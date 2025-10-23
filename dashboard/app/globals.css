@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NO FANCY SHIT - JUST BASICS */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+}
+
+/* Custom scrollbar for whole page */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff88;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc6a;
+}
+
+@layer base {
+  body {
+    @apply bg-lmnh-dark text-white;
+  }
+}
+
+@layer utilities {
+  .glow-text {
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  }
+  
+  .glow-border {
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+  }
+  
+  .terminal-scroll::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .terminal-scroll::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+  
+  .terminal-scroll::-webkit-scrollbar-thumb {
+    background: #00ff88;
+    border-radius: 4px;
+  }
+  
+  .terminal-scroll::-webkit-scrollbar-thumb:hover {
+    background: #00cc6a;
+  }
+}
+

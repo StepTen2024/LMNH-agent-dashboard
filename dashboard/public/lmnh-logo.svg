@@ -1,0 +1,35 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer Circle -->
+  <circle cx="100" cy="100" r="90" fill="none" stroke="#00ff88" stroke-width="4"/>
+  
+  <!-- Inner Design - Abstract "LMNH" concept -->
+  <g fill="none" stroke="#00ff88" stroke-width="3" stroke-linecap="round">
+    <!-- L -->
+    <path d="M 50 60 L 50 100 L 70 100"/>
+    <!-- M -->
+    <path d="M 80 100 L 80 60 L 95 80 L 110 60 L 110 100"/>
+    <!-- N -->
+    <path d="M 120 100 L 120 60 L 145 100 L 145 60"/>
+    <!-- H -->
+    <path d="M 155 60 L 155 100 M 155 80 L 175 80 M 175 60 L 175 100"/>
+  </g>
+  
+  <!-- Bicycle Icon in Center -->
+  <g transform="translate(100, 130)">
+    <!-- Wheels -->
+    <circle cx="-25" cy="0" r="12" fill="none" stroke="#00ff88" stroke-width="2"/>
+    <circle cx="25" cy="0" r="12" fill="none" stroke="#00ff88" stroke-width="2"/>
+    <!-- Frame -->
+    <path d="M -25 0 L 0 -15 L 25 0 M 0 -15 L 0 -5" fill="none" stroke="#00ff88" stroke-width="2"/>
+    <!-- Handlebars -->
+    <path d="M -5 -15 L 5 -15" stroke="#00ff88" stroke-width="2"/>
+    <!-- Seat -->
+    <path d="M 15 -5 L 25 -5" stroke="#00ff88" stroke-width="2"/>
+  </g>
+  
+  <!-- "NO HANDS" text effect -->
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#00ff88" opacity="0.8">
+    NO HANDS!
+  </text>
+</svg>
+
