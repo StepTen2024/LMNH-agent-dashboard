@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+        
+        .header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .main-container {
+            margin-top: 80px;
+            padding: 20px;
+            min-height: calc(100vh - 80px);
+            max-width: 100vw;
+        }
+        
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .dashboard-card {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .dashboard-card:hover {
+            transform: translateY(-2px);
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .card-content {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .metrics-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .metric-item {
+            background: #f0f9ff;
+            padding: 10px 15px;
+            border-radius: 6px;
+            min-width: 100px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #0066cc;
+        }
+        
+        .metric-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .scroll-container {
+            max-height: 400px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f1f1f1;
+        }
+        
+        .scroll-container::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .scroll-container::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+        
+        .scroll-container::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+        
+        .scroll-container::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .main-container {
+                padding: 15px;
+                margin-top: 70px;
+            }
+            
+            .header {
+                padding: 0.8rem;
+            }
+            
+            .metrics-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Main Dashboard</h1>
+    </header>
+    
+    <div class="main-container">
+        <div class="dashboard-grid">
+            <div class="dashboard-card">
+                <div class="card-title">Overview</div>
+                <div class="card-content">
+                    <div class="metrics-container">
+                        <div class="metric-item">
+                            <div class="metric-value">1,234</div>
+                            <div class="metric-label">Total Users</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">567</div>
+                            <div class="metric-label">Active Sessions</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="metric-value">89%</div>
+                            <div class="metric-label">Uptime</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-card">
+                <div class="card-title">Recent Activity</div>
+                <div class="scroll-container">
+                    <div class="card-content">
+                        <div style="margin-bottom: 10px; padding: 10px; border-left: 3px solid #0066cc;">User login: john@example.com</div>
+                        <div style="margin-bottom: 10px; padding: 10px; border-left: 3px solid #00cc66;">System update completed</div>
+                        <div style="margin-bottom: 10px; padding: 10px; border-left: 3px solid #cc6600;">New user registration</div>
+                        <div style="margin-bottom: 10px; padding: 10px; border-left: 3px solid #0066cc;">Data backup initiated</div>
+                        <div style="margin-bottom: 10px; padding: 10px; border-left: 3px solid #cc0066;">Failed login attempt</div>
+                        <div style="margin-bottom: 10px; padding: 10px; border-left: 3px solid #00cc66;">Server health check passed</div>
+                        <div style="margin-bottom: 10px; padding: 10px; border-left: 3px solid #0066cc;">User logout: jane@example.com</div>
+                        <div style="margin-bottom: 10px; padding: 10px; border-left: 3px solid #cc6600;">Configuration updated</div>
+                        <div style="margin-bottom: 10px; padding: 10px; border-left: 3px solid #00cc66;">Database optimization completed</div>
+                        <div style="margin-bottom: 10px; padding: 10px; border-left: 3px solid #0066cc;">New API request received</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-card">
+                <div class="card-title">System Status</div>
+                <div class="card-content">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <span>Database</span>
+                        <span style="color: #00cc66; font-weight: bold;">Online</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <span>API Server</span>
+                        <span style="color: #00cc66; font-weight: bold;">Online</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <span>Cache Service</span>
+                        <span style="color: #cc6600; font-weight: bold;">Warning</span>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <span>File Storage</span>
+                        <span style="color: #00cc66; font-weight: bold;">Online</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-card">
+                <div class="card-title">Performance Metrics</div>
+                <div class="scroll-container">
+                    <div class="card-content">
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>CPU Usage</span>
+                                <span>45%</span>
+                            </div>
+                            <div style="background: #f0f0f0; height: 8px; border-radius: 4px;">
+                                <div style="background: #0066cc; width: 45%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Memory Usage</span>
+                                <span>72%</span>
+                            </div>
+                            <div style="background: #f0f0f0; height: 8px; border-radius: 4px;">
+                                <div style="background: #cc6600; width: 72%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Disk Usage</span>
+                                <span>28%</span>
+                            </div>
+                            <div style="background: #f0f0f0; height: 8px; border-radius: 4px;">
+                                <div style="background: #00cc66; width: 28%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                                <span>Network I/O</span>
+                                <span>63%</span>
+                            </div>
+                            <div style="background: #f0f0f0; height: 8px; border-radius: 4px;">
+                                <div style="background: #0066cc; width: 63%; height: 100%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-card">
+                <div class="card-title">Quick Actions</div>
+                <div class="card-content">
+                    <button style="width: 100%; padding: 10px; margin-bottom: 10px; background: #0066cc; color: white; border: none; border-radius: 4px; cursor: pointer;">Refresh Data</button>
+                    <button style="width: 100%; padding: 10px; margin-bottom: 10px; background: #00cc66; color: white; border: none; border-radius: 4px; cursor: pointer;">Export Report</button>
+                    <button style="width: 100%; padding: 10px; margin-bottom: 10px; background: #cc6600; color: white; border: none; border-radius: 4px; cursor: pointer;">System Settings</button>
+                    <button style="width: 100%; padding: 10px; background: #666; color: white; border: none; border-radius: 4px; cursor: pointer;">View Logs</button>
+                </div>
+            </div>
+            
+            <div class="dashboard-card">
+                <div class="card-title">Notifications</div>
+                <div class="scroll-container">
+                    <div class="card-content">
+                        <div style="padding: 10px; background: #fff3cd; border-left: 4px solid #ffc107; margin-bottom: 10px; border-radius: 4px;">
+                            <strong>Warning:</strong> Cache service memory usage is high
+                        </div>
+                        <div style="padding: 10px; background: #d1ecf1; border-left: 4px solid #17a2b8; margin-bottom: 10px; border-radius: 4px;">
+                            <strong>Info:</strong> Scheduled maintenance in 2 days
+                        </div>
+                        <div style="padding: 10px; background: #d4edda; border-left: 4px solid #28a745; margin-bottom: 10px; border-radius: 4px;">
+                            <strong>Success:</strong> Backup completed successfully
+                        </div>
+                        <div style="padding: 10px; background: #f8d7da; border-left: 4px solid #dc3545; margin-bottom: 10px; border-radius: 4px;">
+                            <strong>Error:</strong> Failed to connect to external API
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Smooth scrolling fix for dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            // Ensure proper scroll behavior
+            document.documentElement.style.scrollBehavior = 'smooth';
+            
+            // Fix any scroll position issues
+            window.addEventListener('load', function() {
+                if (window.location.hash) {
+                    window.scrollTo(0, 0);
+                }
+            });
+            
+            // Handle scroll container issues
+            const scrollContainers = document.querySelectorAll('.scroll-container');
+            scrollContainers.forEach(container => {
+                container.addEventListener('scroll', function(e) {
+                    e.stopPropagation();
+                });
+            });
+            
+            // Prevent horizontal overflow
+            const body = document.body;
+            body.style.overflowX = 'hidden';
+            
+            // Responsive scroll handling
+            function handleResize() {
+                const containers = document.querySelectorAll('.scroll-container');
+                containers.forEach(container => {
+                    if (window.innerWidth <= 768) {
+                        container.style.maxHeight = '300px';
+                    } else {
+                        container.style.maxHeight = '400px';
+                    }
+                });
+            }
+            
+            window.addEventListener('resize', handleResize);
+            handleResize();
+        });
+    </script>
+</body>
+</html>
