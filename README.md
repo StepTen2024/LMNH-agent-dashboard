@@ -101,6 +101,17 @@ You'll see real-time updates like:
 2024-01-15 10:30:35 - INFO - Task state: CLONING → CODING
 ```
 
+## Task Lifecycle Dashboard Experiment
+
+LMNH created a Django/Flask-based Task Lifecycle Dashboard (see commit b231081) that tracked complete task history with 19 implementation files. This was removed due to architectural conflicts with our Next.js/FastAPI stack:
+
+- **What was built**: Full-stack Django/Flask + React/Material-UI task management system
+- **Why removed**: Conflicts with existing Next.js/Tailwind/FastAPI/Prisma architecture
+- **Documentation**: See [TASK_LIFECYCLE_IDIOTS_GUIDE.md](./TASK_LIFECYCLE_IDIOTS_GUIDE.md) for complete details
+- **Lesson learned**: Be explicit about tech stack constraints when instructing LMNH
+
+---
+
 ## Project Status
 
 ### Current Features
