@@ -10,6 +10,97 @@ Autonomous coding agent that does your bidding with NO HANDS!
 - **Specialty:** General coding tasks
 - **Catchphrase:** "LOOK MUM, NO HANDS!"
 
+## Task Lifecycle Dashboard
+
+### 📊 Understanding Task States
+
+LMNH processes tasks through several states. Here's what each means:
+
+| State | What It Means | What LMNH Is Doing |
+|-------|---------------|-------------------|
+| 🟡 **RECEIVED** | Task just came in | "Got it mum! Let me read this..." |
+| 🔄 **PLANNING** | Thinking about approach | "Hmm, how should I tackle this?" |
+| 📦 **CLONING** | Getting your code | "Downloading your repo..." |
+| ✏️ **CODING** | Writing the solution | "LOOK MUM, NO HANDS! *typing*" |
+| 🚀 **PUSHING** | Saving to GitHub | "Uploading my masterpiece..." |
+| ✅ **COMPLETED** | All done! | "DONE! Did you see that, mum?" |
+| ❌ **FAILED** | Something went wrong | "Uh oh mum... I made a mess" |
+
+### 🔍 How to Track Your Task
+
+When you send a task, LMNH will show you exactly what's happening:
+
+```
+🚴‍♂️ Task received! Let me get to work...
+State: RECEIVED → PLANNING
+🤔 Planning approach...
+State: PLANNING → CLONING
+📦 Cloning repository...
+State: CLONING → CODING
+💻 Writing code (no hands!)...
+State: CODING → PUSHING
+🚀 Pushing changes...
+State: PUSHING → COMPLETED
+✅ Task completed successfully!
+```
+
+### 🚨 When Things Go Wrong
+
+If LMNH hits a problem, you'll see:
+
+```
+❌ State: PLANNING → FAILED
+Error: Could not understand the task requirements
+💡 Try: Be more specific about what you want me to do
+```
+
+Common failure points and fixes:
+
+| When It Fails | Why | How to Fix |
+|---------------|-----|------------|
+| **PLANNING** | Task unclear | Be more specific about what you want |
+| **CLONING** | Can't access repo | Check repo URL and permissions |
+| **CODING** | Can't find file | Make sure the file exists or specify creation |
+| **PUSHING** | Git issues | Check GitHub token permissions |
+
+### 📈 Task Progress Indicators
+
+LMNH shows progress with emojis:
+
+- 🟡 Starting up
+- 🔄 Working on it
+- 📦 Getting files
+- ✏️ Making changes
+- 🚀 Almost done
+- ✅ Success!
+- ❌ Oops...
+
+### 🎯 Task Success Tips
+
+For best results:
+
+1. **Be Specific**: Instead of "fix the bug" → "fix the login validation error in auth.py"
+2. **Provide Context**: Mention what the code should do
+3. **Specify Files**: Tell LMNH which file to modify
+4. **Check Permissions**: Ensure repo access is granted
+
+### 📊 Live Task Monitoring
+
+Want to see what LMNH is doing right now? Check the logs:
+
+```bash
+tail -f logs/lmnh.log
+```
+
+You'll see real-time updates like:
+```
+2024-01-15 10:30:15 - INFO - Task state: RECEIVED → PLANNING
+2024-01-15 10:30:20 - INFO - Generated plan for task
+2024-01-15 10:30:25 - INFO - Task state: PLANNING → CLONING
+2024-01-15 10:30:30 - INFO - Repository cloned successfully
+2024-01-15 10:30:35 - INFO - Task state: CLONING → CODING
+```
+
 ## Project Status
 
 ### Current Features
@@ -20,12 +111,13 @@ Autonomous coding agent that does your bidding with NO HANDS!
 - ✅ Comprehensive logging system
 - ✅ Error handling and recovery
 - ✅ Multi-file task support
+- ✅ Real-time task lifecycle tracking
 
 ### Recent Updates
-- Added project tracking dashboard to README
-- Enhanced task parsing with better error handling
-- Improved logging for debugging
-- Streamlined GitHub operations
+- Added comprehensive task lifecycle dashboard
+- Enhanced state tracking and user feedback
+- Improved error messages with actionable suggestions
+- Added real-time progress indicators
 
 ### Known Issues
 - None currently identified
@@ -139,12 +231,12 @@ branch: develop
 
 ### LMNH's Workflow
 
-1. 🚴‍♂️ "LOOK MUM! Starting task..."
-2. 🤔 Thinks about the task using Claude
-3. 📦 Clones the repository
-4. 💻 Writes the code (no hands!)
-5. 🚀 Pushes to GitHub
-6. ✅ "DONE! Did you see that, mum?"
+1. 🚴‍♂️ "LOOK MUM! Starting task..." (RECEIVED)
+2. 🤔 Thinks about the task using Claude (PLANNING)
+3. 📦 Clones the repository (CLONING)
+4. 💻 Writes the code (no hands!) (CODING)
+5. 🚀 Pushes to GitHub (PUSHING)
+6. ✅ "DONE! Did you see that, mum?" (COMPLETED)
 
 ## Logs
 
@@ -177,6 +269,8 @@ tail -f logs/lmnh.log
 - Optionally specify which file to modify
 - LMNH works best with clear, focused tasks
 - If LMNH says "uh oh mum", check the logs!
+- Watch the state transitions to understand progress
+- Failed tasks will show helpful error messages
 
 ## Next Steps
 

@@ -1,0 +1,46 @@
+# Images Directory
+
+This directory contains images used in the Task Lifecycle Dashboard documentation.
+
+## Image Files
+
+### Dashboard Screenshots
+- `dashboard-overview.png` - Main dashboard view showing all active tasks
+- `task-creation.png` - Screenshot of the task creation form
+- `task-details.png` - Detailed view of a single task
+- `task-editing.png` - Task editing interface
+- `task-filters.png` - Task filtering and search options
+
+### Workflow Diagrams
+- `task-lifecycle-flow.png` - Visual representation of task states and transitions
+- `user-workflow.png` - Step-by-step user interaction flow
+- `system-architecture.png` - High-level system architecture diagram
+
+### UI Components
+- `buttons-states.png` - Various button states (normal, hover, disabled)
+- `form-elements.png` - Input fields, dropdowns, and other form controls
+- `navigation-menu.png` - Main navigation menu structure
+- `status-indicators.png` - Task status badges and icons
+
+### Tutorial Screenshots
+- `getting-started-1.png` - First step of the getting started guide
+- `getting-started-2.png` - Second step of the getting started guide
+- `getting-started-3.png` - Third step of the getting started guide
+
+## Image Guidelines
+
+- All screenshots should be taken at 1920x1080 resolution
+- Use PNG format for screenshots with UI elements
+- Use JPG format for photographs or complex images
+- Compress images to keep file sizes reasonable (under 500KB when possible)
+- Use descriptive filenames with hyphens instead of spaces
+- Include alt text descriptions when referencing images in documentation
+
+## Adding New Images
+
+When adding new images to this directory:
+
+1. Follow the naming convention: `category-description.extension`
+2. Update this README file with the new image information
+3. Ensure images are optimized for web display
+4. Test that images display correctly in the documentation
