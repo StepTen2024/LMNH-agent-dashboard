@@ -1,3 +1,5 @@
+<!-- Real-time dashboard for monitoring LMNH autonomous coding agent activity -->
+
 # 🚴‍♂️ LMNH Dashboard
 
 **Real-time dashboard for the LMNH autonomous coding agent!**
@@ -148,4 +150,3 @@ Potential enhancements:
 ---
 
 **Built with ❤️ and absolutely NO HANDS! 🚴‍♂️**
-
